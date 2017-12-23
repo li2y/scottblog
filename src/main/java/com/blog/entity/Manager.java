@@ -6,17 +6,20 @@ import javax.persistence.*;
  * Created by Li2 on 2017/12/23.
  */
 @Entity
-@Table(name = "blog_user")
-public class User {
+@Table(name = "t_manager")
+public class Manager {
     @Id
-    @Column
+    @GeneratedValue(generator = "uuid")  //id 使用UUID生成
     private String id;
+
     @Column
-    private String userName;
+    private String managerName;
+
     @Column
     private String password;
+
     @Column
-    private String address;
+    private String createTime;
 
     public String getId() {
         return id;
@@ -26,12 +29,12 @@ public class User {
         this.id = id;
     }
 
-    public String getUserName() {
-        return userName;
+    public String getManagerName() {
+        return managerName;
     }
 
-    public void setUserName(String userName) {
-        this.userName = userName;
+    public void setManagerName(String managerName) {
+        this.managerName = managerName;
     }
 
     public String getPassword() {
@@ -42,11 +45,11 @@ public class User {
         this.password = password;
     }
 
-    public String getAddress() {
-        return address;
+    public String getCreateTime() {
+        return createTime;
     }
 
-    public void setAddress(String address) {
-        this.address = address;
+    public void setCreateTime(String createTime) {
+        this.createTime = createTime;
     }
 }
