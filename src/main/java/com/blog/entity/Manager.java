@@ -1,5 +1,7 @@
 package com.blog.entity;
 
+import org.hibernate.annotations.GenericGenerator;
+
 import javax.persistence.*;
 
 /**
@@ -10,6 +12,7 @@ import javax.persistence.*;
 public class Manager {
     @Id
     @GeneratedValue(generator = "uuid")  //id 使用UUID生成
+    @GenericGenerator(name = "uuid",strategy = "uuid")
     private String id;
 
     @Column
